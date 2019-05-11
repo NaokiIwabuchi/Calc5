@@ -9,20 +9,34 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-            override fun onCreate(savedInstanceState: Bundle?) {
-                super.onCreate(savedInstanceState)
-                setContentView(R.layout.activity_main)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-                button1.setOnClickListener(this)
+        button1.setOnClickListener(this)
+        button2.setOnClickListener(this)
+        button3.setOnClickListener(this)
+        button4.setOnClickListener(this)
+    }
 
+        override fun onClick(v: View) {
+
+            val intent = Intent(this, SecondActivity::class.java)
+
+            val a: Int = Integer.parseInt(ed1.text.toString())
+            val b: Int = Integer.parseInt(ed2.text.toString())
+
+            when (v.id) {
+                R.id.button1 -> intent.putExtra("VALUE1", a + b)
+                R.id.button2 -> intent.putExtra("VALUE1", a - b)
+                R.id.button3 -> intent.putExtra("VALUE1", a * b)
+                R.id.button4 -> intent.putExtra("VALUE1", a / b)
             }
 
-            override fun onClick(v: View?) {
-                val intent = Intent(this, SecondActivity::class.java)
-                intent.putExtra("VALUE1", 10)
-                intent.putExtra("VALUE2", 20)
-                startActivity(intent)
-            }
+
+            startActivity(intent)
         }
+
+    }
 
 
