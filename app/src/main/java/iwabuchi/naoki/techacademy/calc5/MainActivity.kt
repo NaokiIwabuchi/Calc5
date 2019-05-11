@@ -23,8 +23,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             val intent = Intent(this, SecondActivity::class.java)
 
-            val a: Int = Integer.parseInt(ed1.text.toString())
-            val b: Int = Integer.parseInt(ed2.text.toString())
+            val a: Double = ed1.text.toString().toDouble()
+            val b: Double = ed2.text.toString().toDouble()
 
             when (v.id) {
                 R.id.button1 -> intent.putExtra("VALUE1", a + b)
