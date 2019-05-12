@@ -21,29 +21,25 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         button4.setOnClickListener(this)
     }
 
-        override fun onClick(v: View) {
+    override fun onClick(v: View) {
 
-            val intent = Intent(this, SecondActivity::class.java)
+        val intent = Intent(this, SecondActivity::class.java)
 
 
-            if ( ed1.text.isEmpty()||ed2.text.isEmpty()){
+        if (ed1.text.isEmpty() || ed2.text.isEmpty()) {
 
-                fab.setOnClickListener{view -
-                Snackbar.make(view,"数値を入れてください", Snackbar.LENGTH_INDEFINITE)
-           //         .button1.setAction("戻る"),null).show()
-                }
+              Snackbar.make(v, "数値を入れてください", Snackbar.LENGTH_INDEFINITE)
+        }
 
-           //     findViewById(R.id.button)
-           //     toastMessage = "数値を入力してください"
+        //     findViewById(R.id.button)
+        //     toastMessage = "数値を入力してください"
+        //   var VALUUE = value2
+        //     R.id.button1 -> intent.putExtra("VALUE2")
+        //     R.id.button2 -> intent.putExtra("VALUE2")
+        //     R.id.button3 -> intent.putExtra("VALUE2")
+        //     R.id.button4 -> intent.putExtra("VALUE2")
 
-           //   var VALUUE = value2
-           //     R.id.button1 -> intent.putExtra("VALUE2")
-           //     R.id.button2 -> intent.putExtra("VALUE2")
-           //     R.id.button3 -> intent.putExtra("VALUE2")
-           //     R.id.button4 -> intent.putExtra("VALUE2")
-
-            } else {
-
+     else {
             val a: Double = ed1.text.toString().toDouble()
             val b: Double = ed2.text.toString().toDouble()
 
@@ -52,12 +48,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 R.id.button2 -> intent.putExtra("VALUE1", a - b)
                 R.id.button3 -> intent.putExtra("VALUE1", a * b)
                 R.id.button4 -> intent.putExtra("VALUE1", a / b)
-            }}
+            }
 
 
             startActivity(intent)
-        }
 
-    }
+        }}}
+
 
 
