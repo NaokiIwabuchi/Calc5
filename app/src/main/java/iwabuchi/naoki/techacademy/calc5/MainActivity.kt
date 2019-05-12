@@ -4,7 +4,9 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.content.Intent
+import android.support.design.widget.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -23,6 +25,25 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             val intent = Intent(this, SecondActivity::class.java)
 
+
+            if ( ed1.text.isEmpty()||ed2.text.isEmpty()){
+
+                fab.setOnClickListener{view -
+                Snackbar.make(view,"数値を入れてください", Snackbar.LENGTH_INDEFINITE)
+           //         .button1.setAction("戻る"),null).show()
+                }
+
+           //     findViewById(R.id.button)
+           //     toastMessage = "数値を入力してください"
+
+           //   var VALUUE = value2
+           //     R.id.button1 -> intent.putExtra("VALUE2")
+           //     R.id.button2 -> intent.putExtra("VALUE2")
+           //     R.id.button3 -> intent.putExtra("VALUE2")
+           //     R.id.button4 -> intent.putExtra("VALUE2")
+
+            } else {
+
             val a: Double = ed1.text.toString().toDouble()
             val b: Double = ed2.text.toString().toDouble()
 
@@ -31,7 +52,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 R.id.button2 -> intent.putExtra("VALUE1", a - b)
                 R.id.button3 -> intent.putExtra("VALUE1", a * b)
                 R.id.button4 -> intent.putExtra("VALUE1", a / b)
-            }
+            }}
 
 
             startActivity(intent)

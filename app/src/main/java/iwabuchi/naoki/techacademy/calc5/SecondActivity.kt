@@ -13,8 +13,11 @@ class SecondActivity : AppCompatActivity() {
         setContentView(R.layout.activity_second)
 
         val value1 = intent.getDoubleExtra("VALUE1",0.0)
+        val value2 = intent.getDoubleExtra("VALUE2",0.0)
+
 
         tv1.text = "$value1"
+        tv2.text = "$value2"
         }
     }
 
